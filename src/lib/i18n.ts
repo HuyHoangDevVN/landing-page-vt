@@ -147,31 +147,31 @@ export const translations = {
       subtitle: "Những cột mốc phát triển của HTX Vạn Thắng",
       milestones: [
         {
-          year: "2020",
+          year: "11/2025",
           title: "Thành lập HTX",
           description:
             "Hợp tác xã được thành lập với 20 thành viên sáng lập, khởi đầu hành trình nông nghiệp công nghệ cao.",
         },
         {
-          year: "2021",
+          year: "12/2025",
           title: "Khởi động dự án",
           description:
             "Xây dựng nhà máy sản xuất phân hữu cơ và vườn chè công nghệ cao đầu tiên với diện tích 20 hecta.",
         },
         {
-          year: "2022",
+          year: "1/2026",
           title: "Ứng dụng IoT",
           description:
             "Triển khai hệ thống IoT giám sát vườn chè 24/7. Đạt chứng nhận VietGAP cho sản phẩm chè hữu cơ.",
         },
         {
-          year: "2023",
+          year: "3/2026",
           title: "Tích hợp AI",
           description:
             "Ra mắt hệ thống AI phân tích dữ liệu canh tác và tối ưu hóa năng suất. Mở rộng diện tích lên 50 hecta.",
         },
         {
-          year: "2024",
+          year: "4/2026",
           title: "Blockchain & Xuất khẩu",
           description:
             "Áp dụng công nghệ Blockchain truy xuất nguồn gốc. Xuất khẩu lô hàng đầu tiên sang thị trường quốc tế.",
