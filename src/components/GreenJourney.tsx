@@ -3,9 +3,17 @@
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import Image from "next/image";
 
 export default function GreenJourney() {
   const { t } = useTranslation();
+
+  const milestoneImages = [
+    "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1587735243495-95d52a7c7822?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=2071&auto=format&fit=crop",
+  ];
 
   return (
     <section id="journey" className="py-20 bg-white dark:bg-gray-900">
@@ -41,19 +49,35 @@ export default function GreenJourney() {
                 }`}
               >
                 <div className="w-full md:w-5/12">
-                  <div className="bg-gradient-to-br from-white to-[#80C242]/5 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#80C242]">
-                    <div className="flex items-center mb-3">
-                      <Calendar className="w-5 h-5 text-[#80C242] mr-2" />
-                      <span className="text-2xl font-bold text-[#80C242]">
-                        {milestone.year}
-                      </span>
+                  <div className="bg-gradient-to-br from-white to-[#80C242]/5 dark:from-gray-800 dark:to-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#80C242] group">
+                    {/* Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <div
+                        className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                        style={{
+                          backgroundImage: `url("${
+                            milestoneImages[index % milestoneImages.length]
+                          }")`,
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-4 left-4 flex items-center">
+                        <Calendar className="w-5 h-5 text-[#80C242] mr-2" />
+                        <span className="text-2xl font-bold text-white">
+                          {milestone.year}
+                        </span>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {milestone.description}
-                    </p>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {milestone.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
 

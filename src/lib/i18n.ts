@@ -191,18 +191,14 @@ export const translations = {
       categories: [
         {
           title: "Đối tác công nghệ",
-          partners: [
-            "FPT Software - Cung cấp giải pháp AI và IoT",
-            "Viettel IoT - Hệ thống cảm biến và giám sát",
-            "VNPT AI - Phân tích dữ liệu và dự đoán",
-          ],
+          partners: ["FIT-DNU - Cung cấp giải pháp công nghệ"],
         },
         {
           title: "Đối tác nghiên cứu",
           partners: [
             "Viện Cây Công Nghiệp - Nghiên cứu giống chè",
-            "Trường ĐH Nông Lâm TP.HCM - Đào tạo và chuyển giao công nghệ",
-            "Viện Khoa học Công nghệ Nông nghiệp - Tư vấn kỹ thuật",
+            "Trường ĐH X",
+            "Viện Khoa học Y",
           ],
         },
         {

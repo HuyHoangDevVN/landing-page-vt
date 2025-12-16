@@ -19,6 +19,8 @@ export default function Technology() {
       features: t.technology.ai.features,
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-50 dark:bg-purple-900/20",
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
     },
     {
       icon: Cpu,
@@ -27,6 +29,8 @@ export default function Technology() {
       features: t.technology.iot.features,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
+      image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
     },
     {
       icon: Shield,
@@ -35,6 +39,8 @@ export default function Technology() {
       features: t.technology.transparency.features,
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-50 dark:bg-green-900/20",
+      image:
+        "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2032&auto=format&fit=crop",
     },
   ];
 
@@ -56,6 +62,16 @@ export default function Technology() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.5 }}
+            className="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4"
+          >
+            <span className="text-sm font-semibold text-purple-700 dark:text-purple-400">
+              🚀 Công nghệ tiên tiến
+            </span>
+          </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {t.technology.title}
           </h2>
@@ -76,6 +92,15 @@ export default function Technology() {
                 className="group"
               >
                 <div className="h-full p-8 rounded-2xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-transparent shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                  {/* Background Image with Overlay */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url("${tech.image}")` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-white/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-800/90" />
+                  </div>
+
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
                   />

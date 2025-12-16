@@ -10,10 +10,12 @@ import Technology from "@/components/Technology";
 import GreenJourney from "@/components/GreenJourney";
 import PartnersCustomers from "@/components/PartnersCustomers";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
+      <ScrollProgress />
       <Header />
       <main>
         <Hero />
