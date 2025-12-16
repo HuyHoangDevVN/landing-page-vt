@@ -23,8 +23,17 @@ jobs:
           $ErrorActionPreference = "Stop"
           $siteName = "TeaLandingPage"
           $target = "C:\inetpub\wwwroot\$siteName"
+
+          # Xác định thư mục build output (thay đổi theo cấu hình của bạn)
+          $buildOutput = ".\out"  # Hoặc ".\.next" nếu dùng SSR
+
+          if (-Not (Test-Path $buildOutput)) {
+            Write-Error "Build output directory '$buildOutput' not found!"
+            exit 1
+          }
+
           Stop-Website -Name $siteName
           Remove-Item "$target\*" -Recurse -Force -ErrorAction SilentlyContinue
-          Copy-Item ".\dist\*" -Destination $target -Recurse -Force
+          Copy-Item "$buildOutput\*" -Destination $target -Recurse -Force
           Start-Website -Name $siteName
         shell: powershell
