@@ -7,10 +7,16 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, windows]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "yarn"
 
       - name: Install dependencies
         run: yarn install
@@ -18,22 +24,14 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Deploy to IIS
-        run: |
-          $ErrorActionPreference = "Stop"
-          $siteName = "TeaLandingPage"
-          $target = "C:\inetpub\wwwroot\$siteName"
-
-          # Xác định thư mục build output (thay đổi theo cấu hình của bạn)
-          $buildOutput = ".\out"  # Hoặc ".\.next" nếu dùng SSR
-
-          if (-Not (Test-Path $buildOutput)) {
-            Write-Error "Build output directory '$buildOutput' not found!"
-            exit 1
-          }
-
-          Stop-Website -Name $siteName
-          Remove-Item "$target\*" -Recurse -Force -ErrorAction SilentlyContinue
-          Copy-Item "$buildOutput\*" -Destination $target -Recurse -Force
-          Start-Website -Name $siteName
-        shell: powershell
+      - name: Deploy to Server via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "out/*"
+          target: "/var/www/vanthang.vn/"
+          strip_components: 1
+          rm: true
