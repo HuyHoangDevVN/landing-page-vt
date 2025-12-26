@@ -25,6 +25,17 @@ jobs:
         run: npm run build
 
       - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            rm -rf /var/www/vanthang.vn/*
+            mkdir -p /var/www/vanthang.vn
+
+      - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -34,4 +45,4 @@ jobs:
           source: "out/*"
           target: "/var/www/vanthang.vn/"
           strip_components: 1
-          rm: true
+          overwrite: true
