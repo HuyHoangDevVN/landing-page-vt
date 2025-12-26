@@ -32,8 +32,10 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            rm -rf /var/www/vanthang.vn/*
-            mkdir -p /var/www/vanthang.vn
+            sudo rm -rf /var/www/vanthang.vn/*
+            sudo mkdir -p /var/www/vanthang.vn
+            sudo chown -R $USER:$USER /var/www/vanthang.vn
+            sudo chmod -R 755 /var/www/vanthang.vn
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
