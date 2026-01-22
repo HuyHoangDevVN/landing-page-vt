@@ -79,7 +79,7 @@ export const translations = {
         ],
       },
     },
-    // Development Fields
+    // Development
     developmentFields: {
       title: "Lĩnh Vực Phát Triển",
       subtitle: "Các trọng tâm phát triển của HTX",
