@@ -19,7 +19,7 @@ export const translations = {
     // Hero
     hero: {
       title: "Hợp Tác Xã Nông Nghiệp Công Nghệ Cao Vạn Thắng",
-      subtitle: "Tiên phong trong nông nghiệp tuần hoàn và công nghệ cao",
+      subtitle: "Tiên phong trong nông nghiệp tuần hoàn và công nghệ cao năm 2026",
       description:
         "Sản xuất cây chè hữu cơ với công nghệ AI, IoT và quy trình minh bạch 100%",
       cta: "Khám phá ngay",
