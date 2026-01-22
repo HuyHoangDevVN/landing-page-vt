@@ -1,0 +1,38 @@
+name: CI pipeline for Tea
+
+on:
+    push:
+        branches:
+            - dev
+
+jobs:
+    build:
+        runs-on: [self-hosted, windows]
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Build project
+              run: yarn build
+
+            - name: Deploy to IIS
+              run: |
+                  $ErrorActionPreference = "Stop"
+                  $siteName = "TeaLandingPage"
+                  $target = "C:\inetpub\wwwroot\$siteName"
+
+                  $buildOutput = ".\out"  
+
+                  if (-Not (Test-Path $buildOutput)) {
+                    Write-Error "Build output directory '$buildOutput' not found!"
+                    exit 1
+                  }
+
+                  Stop-Website -Name $siteName
+                  Remove-Item "$target\*" -Recurse -Force -ErrorAction SilentlyContinue
+                  Copy-Item "$buildOutput\*" -Destination $target -Recurse -Force
+                  Start-Website -Name $siteName
+              shell: powershell
