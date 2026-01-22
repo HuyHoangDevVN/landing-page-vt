@@ -70,9 +70,14 @@ export default function Hero() {
             className="mb-8"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-[#80C242] rounded-full blur-xl opacity-50"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-[#80C242] to-[#6AA635] rounded-full flex items-center justify-center">
-                <Leaf className="w-10 h-10 text-white" />
+              <div className="absolute inset-0 bg-[#fefffd] rounded-full blur-xl opacity-50"></div>
+              <div className="relative w-20 h-20 bg-gradient-to-br from-[#fffffe] to-[#dff3ce] rounded-full flex items-center justify-center">
+                {/* <Leaf className="w-10 h-10 text-white" /> */}
+                <img
+                  src="/logo.png"
+                  alt="Vạn Thắng Logo"
+                  className="w-10 h-10"
+                />
               </div>
             </div>
           </motion.div>
