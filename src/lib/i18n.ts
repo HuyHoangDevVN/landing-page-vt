@@ -40,7 +40,7 @@ export const translations = {
         {
           title: "Năng suất",
           value: "100+ tấn/năm",
-          description: "Chè hữu cơ caaus chất lượng cao",
+          description: "Chè hữu cơ cấu chất lượng cao",
         },
         {
           title: "Công nghệ",
