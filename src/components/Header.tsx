@@ -86,7 +86,7 @@ export default function Header() {
             onClick={() => scrollToSection("hero")}
           >
             <div className="w-10 h-10 bg-gradient-to-br from-[#fffffe] to-[#dff3ce] rounded-lg flex items-center justify-center">
-              <img src="/logo.png" alt="Vạn Thắng Logo" className="w-8 h-8" />
+              <img src="./logo.png" alt="Vạn Thắng Logo" className="w-8 h-8" />
             </div>
             <span className="font-bold text-lg text-gray-900 dark:text-white hidden sm:block">
               Vạn Thắng

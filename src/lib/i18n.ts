@@ -19,13 +19,13 @@ export const translations = {
     // Hero
     hero: {
       title: "Hợp Tác Xã Nông Nghiệp Công Nghệ Cao Vạn Thắng",
-      subtitle: "Nâng tầm nông sản Việt bằng công nghệ xanh", //hero.subtitle 
+      subtitle: "Trà Việt – Tinh hoa thế giới",
       description:
         "Sản xuất cây chè hữu cơ với công nghệ AI, IoT và quy trình minh bạch 100%",
       cta: "Khám phá ngay",
       learnMore: "Tìm hiểu thêm",
     },
-    // Minh bạch
+    // About
     about: {
       title: "Giới Thiệu Chung",
       subtitle: "Về Hợp Tác Xã Vạn Thắng",
