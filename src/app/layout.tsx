@@ -42,10 +42,10 @@ export const metadata: Metadata = {
       "Sản xuất cây chè hữu cơ với công nghệ AI, IoT và quy trình minh bạch 100%",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Vạn Thắng Organic Tea",
+        alt: "HTX Vạn Thắng Logo",
       },
     ],
   },
@@ -53,7 +53,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HTX Nông Nghiệp Công Nghệ Cao Vạn Thắng",
     description: "Sản xuất cây chè hữu cơ với công nghệ AI, IoT",
-    images: ["/og-image.jpg"],
+    images: ["/logo.png"],
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   viewport: {
     width: "device-width",
