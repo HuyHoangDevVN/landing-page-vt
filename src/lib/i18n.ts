@@ -25,7 +25,7 @@ export const translations = {
       cta: "Khám phá ngay",
       learnMore: "Tìm hiểu thêm",
     },
-    // About
+    // Minh bạch
     about: {
       title: "Giới Thiệu Chung",
       subtitle: "Về Hợp Tác Xã Vạn Thắng",
